@@ -22,8 +22,33 @@ header {
   font-family: var(--font-family);
   cursor: pointer;
   div:hover {
+    scale: 1.1;
+    transition: all 0.3s ease-in-out;
     color: rgb(58, 78, 156);
-
     background-color: var(--primary-color);
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+  }
+}
+@media screen and (max-width: 1280px) {
+  .platform-title {
+    display: none;
+  }
+  .header-buttons {
+    cursor: default;
+
+    pointer-events: none;
+    div {
+      cursor: default;
+      -webkit-transform: none;
+      -moz-transform: none;
+      -ms-transform: none;
+      -o-transform: none;
+
+      &:hover {
+        transform: none;
+        background-color: inherit;
+      }
+    }
   }
 }
