@@ -1,0 +1,16 @@
+:root {
+  --background-color: #141414;
+  --primary-color: whitesmoke;
+  --font-family: "Jost", sans-serif;
+}
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #141414;
+}
+
+body {
+  min-height: 100%;
+}
