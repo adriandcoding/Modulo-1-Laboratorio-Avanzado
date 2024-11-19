@@ -7,6 +7,9 @@
   font-family: var(--font-family);
   color: aliceblue;
 }
+#top-text-2 {
+  display: none;
+}
 
 .top {
   display: grid;
@@ -31,19 +34,21 @@
 
 .top-item img {
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
+  display: block;
 }
 .first {
   display: grid;
   padding: 0.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(6, 1fr);
 }
 .first img {
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
   cursor: pointer;
+  display: block;
 }
 .first img:hover {
   transform: scale(1.2);
@@ -58,13 +63,14 @@
 .second {
   display: grid;
   padding: 0.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(6, 1fr);
 }
 .second img {
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
   cursor: pointer;
+  display: block;
 }
 .second img:hover {
   transform: scale(1.2);
@@ -77,12 +83,11 @@
   box-shadow: 0 0 10px #fff;
 }
 @media screen and (max-width: 1280px) {
-  #top-text::before {
-    content: "Los 3 más populares hoy";
-    visibility: visible;
-  }
   #top-text {
-    visibility: hidden;
+    display: none;
+  }
+  #top-text-2 {
+    display: block;
   }
   .top {
     display: grid;
@@ -97,16 +102,15 @@
   }
   .first {
     display: grid;
-    padding: 0.5rem;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   }
 
-  .first img {
-    cursor: default;
+  .first .item img {
     width: 100%;
     height: auto;
     object-fit: cover;
   }
+
   .first img:hover {
     transform: none;
     box-shadow: none;
@@ -131,6 +135,39 @@
     -o-transform: none;
   }
 }
+@media (min-width: 1015px) and (max-width: 1280px) {
+  .first {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+
+  .first .item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .first .item:nth-child(5),
+  .first .item:nth-child(6) {
+    grid-column: span 2;
+  }
+  .second {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+
+  .second .item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  .second .item:nth-child(5),
+  .second .item:nth-child(6) {
+    grid-column: span 2;
+  }
+}
+
 @media screen and (max-width: 480px) {
   .section-title {
     font-size: 2.5rem;
